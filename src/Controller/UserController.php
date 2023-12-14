@@ -68,7 +68,8 @@ class UserController extends AbstractController
         description: 'Create User (sex: 0=female, 1=male)',
     )]
     #[OA\RequestBody(
-        content: new OA\JsonContent(type: "object",
+        content: new OA\JsonContent(
+            type: "object",
             example:'{
                 "email": "email@server.ru",
                 "name" : "user name",
@@ -132,7 +133,8 @@ class UserController extends AbstractController
         schema: new OA\Schema(type: 'integer')
     )]
     #[OA\RequestBody(
-        content: new OA\JsonContent(type: "object",
+        content: new OA\JsonContent(
+            type: "object",
             example:'{
                 "birthday": "2000-12-10"
             }'

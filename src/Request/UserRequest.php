@@ -13,11 +13,11 @@ class UserRequest extends BaseRequest
     #[Assert\NotBlank]
     #[Assert\Email(
         message: 'The email {{ value }} is not a valid email.',
-    )]    
-   
+    )]
+
     #[UniqueEmail(
         entityClass: User::class,
-        field: 'email'        
+        field: 'email'
     )]
     protected string $email;
 
@@ -41,7 +41,7 @@ class UserRequest extends BaseRequest
         minMessage: 'Your phone must be at least {{ limit }} characters long',
         maxMessage: 'Your phone cannot be longer than {{ limit }} characters'
     )]
-    #[Assert\Regex(pattern:"/^[0-9]*$/", message:"number_only") ]    
+    #[Assert\Regex(pattern:"/^[0-9]*$/", message:"number_only") ]
     protected string $phone;
-    
+
 }

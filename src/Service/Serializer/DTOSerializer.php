@@ -12,7 +12,6 @@ use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
 
-
 class DTOSerializer implements SerializerInterface
 {
     private SerializerInterface $serializer;

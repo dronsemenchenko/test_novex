@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Validator;
 
 use Symfony\Component\Validator\Constraint;
@@ -19,10 +18,10 @@ class UniqueEmail extends Constraint
         array $groups = null,
         $payload = null,
         array $options = []
-    ) {        
+    ) {
         $options['field'] = $field;
         $options['entityClass'] = $entityClass;
-        parent::__construct($options, $groups, $payload);        
+        parent::__construct($options, $groups, $payload);
     }
 
     public function getTargets(): string

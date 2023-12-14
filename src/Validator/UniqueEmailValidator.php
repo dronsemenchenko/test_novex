@@ -13,7 +13,6 @@ use Doctrine\Persistence\ManagerRegistry;
 
 class UniqueEmailValidator extends ConstraintValidator
 {
-
     private ManagerRegistry $em;
 
     public function __construct(ManagerRegistry $registry)

@@ -8,7 +8,6 @@ use App\Entity\User;
 
 class UserUpdater
 {
-
     public function postUpdate(User $User, LifecycleEventArgs $event): void
     {
         $d2 = new \DateTime();

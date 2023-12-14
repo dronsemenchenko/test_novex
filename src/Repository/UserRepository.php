@@ -25,10 +25,10 @@ class UserRepository extends ServiceEntityRepository
 
     public function getSliceItems(Request $request): array|null
     {
-        
+
         if (!$request->query->get('limit') or is_null($request->query->get('limit'))) {
             $limit = $this->params->get('paginator_limit');
-        }else{
+        } else {
             $limit = $request->query->get('limit');
         }
 
@@ -69,24 +69,24 @@ class UserRepository extends ServiceEntityRepository
     {
         $em = $this->getEntityManager();
         $data = json_decode($request->getContent(), true);
-        
-        if(isset($data['email'])){
+
+        if(isset($data['email'])) {
             $User->setEmail($data['email']);
         }
 
-        if(isset($data['name'])){
+        if(isset($data['name'])) {
             $User->setName($data['name']);
         }
 
-        if(isset($data['sex'])){
+        if(isset($data['sex'])) {
             $User->setSex($data['sex']);
         }
 
-        if(isset($data['birthday'])){
+        if(isset($data['birthday'])) {
             $User->setBirthday(new \DateTime($data['birthday']));
         }
 
-        if(isset($data['phone'])){
+        if(isset($data['phone'])) {
             $User->setPhone($data['phone']);
         }
 
@@ -111,28 +111,28 @@ class UserRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
-//    /**
-//     * @return User[] Returns an array of User objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('u')
-//            ->andWhere('u.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('u.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+    //    /**
+    //     * @return User[] Returns an array of User objects
+    //     */
+    //    public function findByExampleField($value): array
+    //    {
+    //        return $this->createQueryBuilder('u')
+    //            ->andWhere('u.exampleField = :val')
+    //            ->setParameter('val', $value)
+    //            ->orderBy('u.id', 'ASC')
+    //            ->setMaxResults(10)
+    //            ->getQuery()
+    //            ->getResult()
+    //        ;
+    //    }
 
-//    public function findOneBySomeField($value): ?User
-//    {
-//        return $this->createQueryBuilder('u')
-//            ->andWhere('u.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+    //    public function findOneBySomeField($value): ?User
+    //    {
+    //        return $this->createQueryBuilder('u')
+    //            ->andWhere('u.exampleField = :val')
+    //            ->setParameter('val', $value)
+    //            ->getQuery()
+    //            ->getOneOrNullResult()
+    //        ;
+    //    }
 }
